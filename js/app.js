@@ -27,7 +27,7 @@ function handleClick(evt) {
 
 function handleCardClick(clickedCard) {
   console.log('Clicked on card:', clickedCard);
-
+  console.log('I AM THE PICKEDCARD:', pickedCard);
   const foundCard = cardValues.find(element => element.value === clickedCard.innerText);
 
   if (pickedCard === null) {
@@ -35,6 +35,7 @@ function handleCardClick(clickedCard) {
   } else {
       if (pickedCard.innerText === clickedCard.innerText) {
           console.log('match found!');// add logic for match
+          pickedCard = null;
       } else {
           console.log('no match!');// add logic for NO match
           setTimeout(() => {
@@ -44,7 +45,8 @@ function handleCardClick(clickedCard) {
           }, 1500);
       }
   }
-}
+  checkWin();
+};
 
 
 /*----- functions -----*/
@@ -54,7 +56,7 @@ function shuffle(array) {
       [array[i], array[j]] = [array[j], array[i]];//
   }
   return array;
-}
+};
 
 function createCardElement(value) {
     const card = document.createElement('div');
@@ -63,6 +65,21 @@ function createCardElement(value) {
     return card;
   };
   
+  function checkWin() {
+    const allCards = document.querySelectorAll('.card');
+    let allCardsFaceUp = true;
+  
+    allCards.forEach(card => {
+        if (card.classList.contains('back')) {
+            allCardsFaceUp = false;
+        }
+    });
+  
+    if (allCardsFaceUp) {
+        alert('Congratulations! You have won the game!');
+    }
+  };
+
   function initializeGame() {
 
     shuffle(cardValues);
@@ -71,11 +88,13 @@ function createCardElement(value) {
       const { value, img } = card;
       const cardElement = createCardElement(value, img);
       gameBoard.appendChild(cardElement);
-  });
-}
+    })
+  };
   
-  initializeGame();
-  
+
+initializeGame();
+
+
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
       card.classList.toggle('back');
