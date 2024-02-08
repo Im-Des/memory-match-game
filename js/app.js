@@ -4,11 +4,21 @@ const cardValues = [
     {value:'2', img:'card_hK'},
     {value:'3', img:'card_hQ'},
     {value:'4', img:'card_hJ'},
+    {value:'5', img:'card_cA'},
+    {value:'6', img:'card_cK'},
+    {value:'7', img:'card_cQ'},
+    {value:'8', img:'card_cJ'},
     {value:'1', img:'card_hA'},
     {value:'2', img:'card_hK'},
     {value:'3', img:'card_hQ'},
     {value:'4', img:'card_hJ'},
+    {value:'5', img:'card_cA'},
+    {value:'6', img:'card_cK'},
+    {value:'7', img:'card_cQ'},
+    {value:'8', img:'card_cJ'},
 ] ;
+
+const restartButton = document.querySelector('.restart-button')
 /*----- app's state (variables) -----*/
 let pickedCard = null;
 /*----- cached element references -----*/
@@ -45,7 +55,9 @@ function handleCardClick(clickedCard) {
           }, 1500);
       }
   }
-  checkWin();
+  setTimeout(() => {
+    checkWin()
+}, 100);
 };
 
 
@@ -91,7 +103,11 @@ function createCardElement(value) {
     })
   };
   
-
+  restartButton.addEventListener('click', () => {
+    gameBoard.innerHTML= ''
+    initializeGame();
+  });
+  
 initializeGame();
 
 

@@ -1,5 +1,16 @@
+.title {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
 .memory-game {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 0.1fr);
     gap: 10px;
 }

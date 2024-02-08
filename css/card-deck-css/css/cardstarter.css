@@ -1,13 +1,12 @@
 @charset "UTF-8";
 .card {
-  box-sizing: border-box;
-  display: inline-block;
-  margin: 5px 5px 50px 5px;
+
+  margin: 5px 5px 5px 5px;
   cursor: pointer;
   /* Set the card's dimensions, and size it relative to
-     it's font size. */
+     it's font size. This controls the actual size of the cards*/
   font-size: inherit;
-  width: 4.0em;
+  width: 4rem;
   height: 5.5em;
   /* Add a default background color and border. */
   background-color: #fff;
@@ -15,7 +14,7 @@
   border: 1px solid #c3c3c3;
   /* Scale and set the background settings. */
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position:  center;
   background-size: contain;
   /* "Hide" any text within the element (use text to be
      simply compliant with screen readers, etc.). */
@@ -93,26 +92,9 @@
    them correctly in case text or other symbols are
    layered on them with CSS pseudo-selectors, new
    classes/rules, etc. */
-.card.west,
-.card.W {
-  transform: rotate(90deg);
-  margin: auto 0.75em; }
-  .card.west.shadow,
-  .card.W.shadow {
-    box-shadow: 2px -2px 3px 0 rgba(41, 41, 41, 0.75); }
 
-.card.north,
-.card.N {
-  transform: rotate(180deg); }
-  .card.north.shadow,
-  .card.N.shadow {
-    box-shadow: -2px -2px 3px 0 rgba(41, 41, 41, 0.75); }
 
-.card.east,
-.card.E {
-  transform: rotate(270deg);
-  margin: auto 0.75em; }
-  .card.east.shadow,
-  .card.E.shadow {
-    box-shadow: -2px 2px 3px 0 rgba(41, 41, 41, 0.75); }
-
+    .card:hover {
+      transform: scale(1.05);
+      background-color: rgba(195, 195, 195, 0.5);
+    }
