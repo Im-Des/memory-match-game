@@ -31,16 +31,22 @@ function handleCardClick(clickedCard) {
   const foundCard = cardValues.find(element => element.value === clickedCard.innerText);
 
   if (pickedCard === null) {
-    pickedCard = foundCard;
+      pickedCard = clickedCard;
   } else {
-    if (pickedCard.value === foundCard.value) {
-      console.log('match found!');// add logic for match
-    } else {
-      console.log('no match!');// add logic for NO match
-    }
-    pickedCard = null;
+      if (pickedCard.innerText === clickedCard.innerText) {
+          console.log('match found!');// add logic for match
+      } else {
+          console.log('no match!');// add logic for NO match
+          setTimeout(() => {
+              clickedCard.classList.add('back'); 
+              pickedCard.classList.add('back'); 
+              pickedCard = null; 
+          }, 1500);
+      }
   }
 }
+
+
 /*----- functions -----*/
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {//loops backwards through the array
