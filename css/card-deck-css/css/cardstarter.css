@@ -40,42 +40,42 @@
     border: 0.15em dashed #daa520; }
 
 .card.hearts.A,
-.card.hA,
+.card_hA,
 .card.♥A {
   background-image: url("../images/hearts/hearts-A.svg"); }
 
 .card.hearts.K,
-.card.hK,
-.card.♥K {
+.card_hK,
+.card♥K {
   background-image: url("../images/hearts/hearts-K.svg"); }
 
 .card.hearts.Q,
-.card.hQ,
+.card_hQ,
 .card.♥Q {
   background-image: url("../images/hearts/hearts-Q.svg"); }
 
 .card.hearts.J,
-.card.hJ,
+.card_hJ,
 .card.♥J {
   background-image: url("../images/hearts/hearts-J.svg"); }
 
 .card.clubs.A,
-.card.cA,
+.card_cA,
 .card.♣A {
   background-image: url("../images/clubs/clubs-A.svg"); }
 
 .card.clubs.K,
-.card.cK,
+.card_cK,
 .card.♣K {
   background-image: url("../images/clubs/clubs-K.svg"); }
 
 .card.clubs.Q,
-.card.cQ,
+.card_cQ,
 .card.♣Q {
   background-image: url("../images/clubs/clubs-Q.svg"); }
 
 .card.clubs.J,
-.card.cJ,
+.card_cJ,
 .card.♣J {
   background-image: url("../images/clubs/clubs-J.svg"); }
 
