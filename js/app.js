@@ -22,19 +22,15 @@ const restartButton = document.querySelector('.restart-button')
 /*----- app's state (variables) -----*/
 let pickedCard = null;
 let cardsPicked = []
+
 /*----- cached element references -----*/
 const gameBoard = document.querySelector('.memory-game');
 
-/*----- event listeners -----*/
-
-/*----- functions for card flipping -----*/
-
-
 /*----- functions -----*/
 function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {//loops backwards through the array
-    const j = Math.floor(Math.random() * (i + 1));//gives a random index number that is an integer
-    [array[i], array[j]] = [array[j], array[i]];//
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 };
@@ -82,7 +78,6 @@ restartButton.addEventListener('click', () => {
 });
 
 initializeGame();
-
 
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('click', handleClick)
