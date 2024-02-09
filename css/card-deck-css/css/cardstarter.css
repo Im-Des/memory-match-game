@@ -1,13 +1,15 @@
 @charset "UTF-8";
 .card {
-
+  animation-name: shuffle;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
   margin: 5px 5px 5px 5px;
   cursor: pointer;
   /* Set the card's dimensions, and size it relative to
      it's font size. This controls the actual size of the cards*/
   font-size: inherit;
-  width: 6rem;
-  height: 8.5em;
+  width: 10rem;
+  height: 12.5em;
   /* Add a default background color and border. */
   background-color: #fff;
   border-radius: 0.20em;
@@ -87,14 +89,19 @@
 .card.back-red {
   background-image: url("../images/backs/red.svg"); }
 
-/* Re-orients the cards for different directions. While
-   they are symmetric, it's still important to orient
-   them correctly in case text or other symbols are
-   layered on them with CSS pseudo-selectors, new
-   classes/rules, etc. */
+.card:hover {
+  transform: scale(1.05);
+  background-color: rgba(195, 195, 195, 0.5);
+  }
 
-
-    .card:hover {
-      transform: scale(1.05);
-      background-color: rgba(195, 195, 195, 0.5);
+  @keyframes shuffle {
+    0% {
+      transform: perspective(400px) rotateY(0deg);
     }
+    50% {
+      transform: perspective(400px) rotateY(180deg);
+    }
+    100% {
+      transform: perspective(400px) rotateY(360deg);
+    }
+  }

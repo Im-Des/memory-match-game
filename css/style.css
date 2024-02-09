@@ -11,6 +11,17 @@
   }
 .memory-game {
     display: grid;
-    grid-template-columns: repeat(4, 0.1fr);
+    grid-template-columns: repeat(8, 0.1fr);
     gap: 10px;
+}
+.restart-button {
+    font-size: 18x;
+    background-color: #3498db;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+body {
+    background-color: #ffc45f;
 }

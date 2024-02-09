@@ -43,7 +43,7 @@ function createCardElement(value) {
   const card = document.createElement('div');
   card.className = 'card back';
   card.innerText = value;
-  // card.style.color = 'transparent' COMMENTED OUT WHILE PLAY TESTING 
+  card.style.color = 'transparent'
   return card;
 };
 
@@ -58,7 +58,7 @@ function checkWin() {
   });
 
   if (allCardsFaceUp) {
-    alert('Congratulations! You have won the game!');
+    alert('Congratulations! You have won the game! Hit Shuffle to play again');
   }
 };
 
@@ -97,6 +97,9 @@ function renderCard(card) {
 }
 function handleClick(evt) {
   const clickedCard = evt.target;
+  if (!clickedCard.classList.contains('back')) {
+    return;
+}
   if (cardsPicked.length >= 2) {
     console.log('2 cards have been selected')
     return
@@ -108,11 +111,11 @@ function handleClick(evt) {
     pickedCard = clickedCard;
   } else {
     if (pickedCard.innerText === clickedCard.innerText) {
-      console.log('match found!');// add logic for match ie score
+      console.log('match found!');
       pickedCard = null;
       cardsPicked = []
     } else {
-      console.log('no match!');// add logic for NO match ie lives
+      console.log('no match!');
       setTimeout(() => {
         clickedCard.classList.add('back');
         pickedCard.classList.add('back');
