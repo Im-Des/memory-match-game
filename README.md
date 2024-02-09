@@ -10,7 +10,7 @@ This game uses JavaScript for the logic as well as DOM manipulation; HTML for th
 
 #### Game Link
 
-
+https://im-des.github.io/memory-match-game/
 
 #### Icebox Items
 I would like to eventually implement a scoring system to track the player's number of guesses, and log it into a highscores table. Also lean more heavily into a theme.
